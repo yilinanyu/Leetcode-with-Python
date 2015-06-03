@@ -1,0 +1,23 @@
+class Solution:
+    # @param A {integer[]} a list of integers
+    # @param {integer} m length of A
+    # @param B {integer[]} a list of integers
+    # @param {integer} n length of B
+    # @return {void} return nothing, modify nums1 in-place instead.
+    def merge(self, A, m, B, n):
+        tmp = [0 for i in range(m + n)]
+        i = 0; j =0; k =0
+        while i < m and j < n:
+            if A[i]<= B[j]:
+                tmp [k] = A[i]; i+=1
+            else:
+                tmp [k] = B[j]; j+=1
+            k+=1
+        if i == m:
+            while k <m+n:
+                tmp[k] = B[j]; k+=1; j+=1
+        else:
+            while k <m+n:
+                tmp[k] = A[i]; i+=1; k+=1
+        for i in range(0,m+n):
+            A[i] = tmp [i]
