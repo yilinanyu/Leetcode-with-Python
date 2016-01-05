@@ -10,6 +10,7 @@ class Solution:
     def deleteDuplicates(self, head):
         if head == None or head.next == None:
             return head
+        # 使用哑节点记录链表头部
         p = head
         while p.next:
             if p.val == p.next.val:
