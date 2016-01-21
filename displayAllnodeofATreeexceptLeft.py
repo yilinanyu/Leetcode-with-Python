@@ -1,7 +1,7 @@
 class Solution:
    
     def displaynodeexceptLeftMost(root):
-        if 
+        if id(root)
 
 
     def disPlayLeftNode(root):
