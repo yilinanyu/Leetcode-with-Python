@@ -1,14 +1,18 @@
 class Solution:
    
-    def displaynodeexceptLeftMost(root):
-        if id(root)
+    def displaynodeexceptLeftMost(root1):
+        if id(root1)!= root:
+            print root1
+        else:
+            
+
 
 
     def disPlayLeftNode(root):
 
         if root is None:
-            print None
+            return None
         elif root.left is None:
-            print root
+            return root
         else:
             self.disPlayLeftNode(root.left)
