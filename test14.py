@@ -1,0 +1,1 @@
+print " ".join("abbbb c d".split()[::-1])
