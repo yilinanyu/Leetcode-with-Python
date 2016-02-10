@@ -1,6 +1,7 @@
 class Solution:
     #@param A a list of integers
     #@return an integer
+    #huhsiuhid
     def trap(self, A):
         leftmosthigh = [0 for i in range(len(A))]
         leftmax = 0
