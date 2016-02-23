@@ -1,0 +1,16 @@
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        head = 0
+        res = float("inf")
+        for i in range(len(s)):
+            sum = s[head : i]
+            while len(set(sum)) == len(sum):
+                res = max(res, i- head + 1)
+                sum = sum[head+1:i]
+                head += 1
+        return res if res <= len(s) else 0
+        
