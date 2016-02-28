@@ -1,13 +1,16 @@
 class Solution(object):
     def minimumTotal(self, triangle):
-        """
-        :type triangle: List[List[int]]
-        :rtype: int
-        """
-        res = [10 ** 10] * len(triangle) # infinity
-        res[0] = triangle[0][0]
-        for i in xrange(1, len(triangle)):
-            for j in xrange(i, 0, -1):
-                res[j] = min(res[j], res[j - 1]) + triangle[i][j]
-            res[0] += triangle[i][0]
-        return min(res)
+        if len(triangle) ==0: return 0
+        array = [0 for i in range(len(triangle))]
+        array[0] = triangle[0][0]
+        for i in range(1,len(triangle)):
+            for j in range(len(triangle[i])-1,-1,-1):
+                if j == len(triangle[i])-1:
+                    array[j] = array[j-1]+ triangle[i][j]
+                elif j ==0:
+                    array[j] = array[j]+triangle[i][j]
+                else:
+                    array[j]= min(array[j-1],array[j])+ triangle[i][j]
+        return min(array)
+        
+            
