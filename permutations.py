@@ -1,11 +1,14 @@
-class Solution:
-    # @param num, a list of integer
-    # @return a list of lists of integers
-    def permute(self, num):
-        if len(num) == 0: return []
-        if len(num) == 1: return [num]
-        res = []
-        for i in range(len(num)):
-            for j in self.permute(num[:i] + num[i+1:]):
-                res.append([num[i]] + j)
-        return res
+# time complexity: O(n!) N factory
+# 3 times 2 
+#backtracking:
+def permutate(self, nums):
+	if len(nums) <= 1:
+		return [nums]
+	res = []
+	for i, x in enumerate(nums):
+		# 1 and two subarray
+		# recurssion to 2 in the second place and 3 in the scond place
+		# elem equals except the x emit the nums[i]
+		for elem in self.permutate(nums[:i]+ nums[i+1:]):
+			res.append([x] + elem)
+	return res
