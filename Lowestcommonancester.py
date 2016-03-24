@@ -1,6 +1,3 @@
-
-
-
 class Solution(object):
     def lowestCommonAncestor(self, root, p, q):
         """
