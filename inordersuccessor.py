@@ -1,20 +1,23 @@
 
-def inOrderSuccessor(root):
+def inOrderSuccessor(p):
 	# Time Complexity: O(h) where h is height of tree.
 # if right is none, 
 # 2) If right sbtree of node is NULL, then succ is one of the ancestors. 
 # Travel up using the parent pointer until you see a node which is left child of it’s parent.
 # The parent of such a node is the suc
-if root.right is None:
-    curr = root.parent
-    while curr.key < root.key and curr != null:
+if p.right is None:
+    curr = p.parent
+    # 看子节点是不是在parent 的右边
+    # p == curr.right
+    while curr.key < p.key and curr != null:
+        # p = curr
         curr = curr.parent
     return curr
  # if right subtree is not null, find the min of my right sub tree
 #If right subtree of node is not NULL, then succ lies in right subtree. Do following.
 # Go to right subtree and return the node with minimum key value in right subtree.
  else:
-     curr = root.right
+     curr = p.right
      while curr.left is not None:
          curr = curr.left
      return curr
@@ -26,6 +29,7 @@ def inorderSuccessor(self, root, p):
 # It just like the binary search in a sorted list. 
 #The time complexity should be O(h) where h is the depth of the result node. succ is a pointer that keeps the possible successor. 
 #Whenever you go left the current root is the new possible successor, otherwise the it remains the same.
+
 # 1) If right subtree of node is not NULL, then succ lies in right subtree. Do following.
 # Go to right subtree and return the node with minimum key value in right subtree.
 # 2) If right sbtree of node is NULL, then start from root and us search like technique. Do following.
@@ -33,6 +37,7 @@ def inorderSuccessor(self, root, p):
 
 # Only in a balanced BST O(h) = O(log n). In the worst case h can be as large as n.
     succ = None
+    #// Start from root and search for successor down the tree
     while root:
         if p.val < root.val:
             succ = root
