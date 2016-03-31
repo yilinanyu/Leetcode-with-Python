@@ -5,6 +5,31 @@
 # // # the second character holds the value of the tree node. When we see ?, 
 # // #we add the new node to left. 
 # // #When we see :, we need to find out the ancestor node that doesn't have a right node, and make the new node as its right child.
+ # 1. Does node have parent pointer?
+ # * 2. Expression's format, leading, trailing spaces, spaces between characters?
+ # * 3. May expression be illegal?
+ # * 4. Token's length is always 1?
+
+ a?b:c 
+
+       a
+      / \
+     b   c
+
+ stack = [a] 
+ n = b
+ n = a
+
+ a?b?c:d:e
+ stack = [a b]
+ N =  b
+ n = d
+
+     a
+    / \
+   b   e
+  / \
+ c   d
 
 def covertToBST(expression):
 	if len(expression) == 0: return None
