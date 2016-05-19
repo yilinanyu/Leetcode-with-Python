@@ -1,10 +1,8 @@
-class Solution():
-	def findFirstDuplicate(an):
-		for i in an(0,len(an)-1):
-			for j in an (i+1, len(an)-1):
-				if an[i] == an[j]:
-					return an[i]
-				else:
-					break
-		return 
-	findFirstDuplicate("aaaaaa")
+def findfirstDuplicate(nums):
+	dict = {}
+	for i in range(len(nums)):
+		x = nums[i]
+		if nums[i] in dict:
+			return nums[i]
+		dict[x] = i
+print findfirstDuplicate([1,3,0,0,3,2,1])
